@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0aH-Yf-3td">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chat Room Table View Controller-->
+        <scene sceneID="kK6-X5-fjG">
+            <objects>
+                <tableViewController id="ZY6-MN-vbU" customClass="ChatRoomTableViewController" customModule="KeepUP" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fQ6-hc-qxf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <textField key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Create Message" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="o15-04-sfP">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCell" rowHeight="63" id="0wr-zX-grt">
+                                <rect key="frame" x="0.0" y="62" width="414" height="63"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0wr-zX-grt" id="bT2-Cp-JNe">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZY6-MN-vbU" id="21h-7v-goW"/>
+                            <outlet property="delegate" destination="ZY6-MN-vbU" id="EKn-ry-OMY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="FqT-qU-eFZ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="yuF-Bo-cPT">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Yyg-V7-hwj">
+                                <rect key="frame" x="302" y="7" width="18" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="plus" catalog="system"/>
+                                <connections>
+                                    <action selector="createChatRoom:" destination="ZY6-MN-vbU" eventType="touchUpInside" id="eF1-ZD-k2h"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <segue destination="Bsg-BJ-kA8" kind="show" identifier="showMessage" id="8Zv-Ww-7C9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="chatRoomTitleTextField" destination="o15-04-sfP" id="gsE-Ud-uVN"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GKi-yt-eTE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1433.3333333333335" y="262.5"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="kkA-to-C0N">
+            <objects>
+                <viewController id="Bsg-BJ-kA8" customClass="MessageViewController" customModule="KeepUP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cXK-Xn-oL7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="INS-FN-Jn3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4Cs-wT-vpr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85j-jw-Cjy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2131" y="269"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T6s-tX-msg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0aH-Yf-3td" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LcW-h7-5qo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZY6-MN-vbU" kind="relationship" relationship="rootViewController" id="c75-MO-P5E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K3M-Bi-xee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="523.1884057971015" y="262.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
